@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-12 lg:px-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto w-full;
+  }
+}
+
