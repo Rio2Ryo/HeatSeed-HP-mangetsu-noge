@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +17,14 @@ const Header = () => {
   }, [])
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } })
+    } else {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        setIsMobileMenuOpen(false)
+      }
     }
   }
 
@@ -31,9 +38,8 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -58,9 +64,8 @@ const Header = () => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`font-medium transition-colors hover:text-gray-600 whitespace-nowrap text-sm lg:text-base ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}
+              className={`font-medium transition-colors hover:text-gray-600 whitespace-nowrap text-sm lg:text-base ${isScrolled ? 'text-gray-900' : 'text-white'
+                }`}
             >
               {item.name}
             </button>
@@ -74,19 +79,16 @@ const Header = () => {
         >
           <div className="space-y-1.5">
             <span
-              className={`block w-6 h-0.5 transition-colors ${
-                isScrolled ? 'bg-gray-900' : 'bg-white'
-              }`}
+              className={`block w-6 h-0.5 transition-colors ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                }`}
             />
             <span
-              className={`block w-6 h-0.5 transition-colors ${
-                isScrolled ? 'bg-gray-900' : 'bg-white'
-              }`}
+              className={`block w-6 h-0.5 transition-colors ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                }`}
             />
             <span
-              className={`block w-6 h-0.5 transition-colors ${
-                isScrolled ? 'bg-gray-900' : 'bg-white'
-              }`}
+              className={`block w-6 h-0.5 transition-colors ${isScrolled ? 'bg-gray-900' : 'bg-white'
+                }`}
             />
           </div>
         </button>

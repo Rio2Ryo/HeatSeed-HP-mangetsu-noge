@@ -16,6 +16,11 @@ const Hero = () => {
     >
       {/* 背景画像 */}
       <div className="absolute inset-0 bg-gray-800">
+        <img
+          src="/media/スクリーンショット 2026-01-07 105037.png"
+          alt="Hero Background"
+          className="w-full h-full object-cover opacity-60"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80" />
       </div>
 
@@ -29,7 +34,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          皆が笑顔になる焼肉のお店
+          旬の鮮魚と彩り野菜、心温まる野毛の隠れ家
         </motion.h1>
 
         <motion.p
@@ -38,7 +43,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          上質な和牛を手頃な価格で。野毛桜木町から徒歩○分。
+          市場直送の鮮魚と厳選野菜。<br className="hidden sm:block" />四季折々の美味を、心ゆくまで。<br className="hidden sm:block" />野毛桜木町から徒歩3分。
         </motion.p>
 
         <motion.button

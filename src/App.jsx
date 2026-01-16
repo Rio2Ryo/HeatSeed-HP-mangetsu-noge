@@ -1,24 +1,24 @@
 import React from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import News from './components/News'
-import Commitment from './components/Commitment'
-import Reservation from './components/Reservation'
-import Menu from './components/Menu'
-import Space from './components/Space'
-import Footer from './components/Footer'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
+import NewsDetail from './pages/NewsDetail'
 
 function App() {
+  const location = useLocation()
+
+  // Reset scroll on route change
+  React.useEffect(() => {
+    if (!location.state?.scrollTo) {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname, location.state])
+
   return (
     <div className="App overflow-x-hidden w-full">
-      <Header />
-      <Hero />
-      <News />
-      <Commitment />
-      <Reservation />
-      <Menu />
-      <Space />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news/:id" element={<NewsDetail />} />
+      </Routes>
     </div>
   )
 }

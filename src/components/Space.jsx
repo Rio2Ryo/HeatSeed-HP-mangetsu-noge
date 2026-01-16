@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const SpaceCard = ({ title, description, index }) => {
+const SpaceCard = ({ title, description, image, index }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -15,8 +15,12 @@ const SpaceCard = ({ title, description, index }) => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
     >
-      <div className="w-full h-64 sm:h-80 bg-gray-200 flex items-center justify-center">
-        <p className="text-gray-500">[ 店内画像 ]</p>
+      <div className="w-full h-64 sm:h-80 bg-gray-200 overflow-hidden group">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
       </div>
       <div className="p-6 sm:p-8">
         <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">{title}</h3>
@@ -29,16 +33,19 @@ const SpaceCard = ({ title, description, index }) => {
 const Space = () => {
   const spaces = [
     {
-      title: 'ゆったりとしたテーブル席',
-      description: '快適な空間でお食事をお楽しみいただけます。',
+      title: '臨場感あふれるカウンター席',
+      description: '目の前で調理される臨場感を味わえる特等席。お一人様やデートでのご利用に最適です。スタッフとの会話もお楽しみいただけます。',
+      image: '/media/スクリーンショット 2026-01-07 142352.png',
     },
     {
-      title: '大人数のご宴会にも対応可能',
-      description: '各種ご宴会、パーティーにもご利用いただけます。',
+      title: '広々としたテーブル席',
+      description: '紫のアクセントが落ち着いた雰囲気を演出するテーブル席。少人数からグループまで、様々なシーンでゆったりとお寛ぎいただけます。',
+      image: '/media/スクリーンショット 2026-01-07 142611.png',
     },
     {
-      title: '大きな窓側席もございます',
-      description: '開放感のある窓側のお席で、特別なひとときをお過ごしください。',
+      title: 'ゆったり寛げる半個室',
+      description: 'プライベートな時間を大切にできる半個室。周りを気にせず、大切な方とのお食事や会話を心ゆくまでお楽しみください。',
+      image: '/media/スクリーンショット 2026-01-07 142524.png',
     },
   ]
 

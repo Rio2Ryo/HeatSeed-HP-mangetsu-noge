@@ -16,7 +16,7 @@ const Menu = () => {
             満月のメニュー
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            子供から大人まで幅広く愛される焼肉店
+            職人の技が光る、本格海鮮料理の数々
           </p>
           <p className="text-base sm:text-lg text-gray-700 mb-8">
             いつでもあなたの帰りをお待ちしております

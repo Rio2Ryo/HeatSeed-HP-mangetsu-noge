@@ -1,22 +1,12 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const News = () => {
   const newsItems = [
     {
-      date: '2025年 4月 5日',
-      title: '横浜マガジンさんに記事掲載いただきました♪',
-      link: '#',
-    },
-    {
-      date: '2025年 4月 1日',
-      title: 'ランチ始めました！',
-      link: '#',
-    },
-    {
-      date: '2025年 3月 21日',
-      title: '満月 野毛桜木町ついにOPEN！',
-      link: '#',
+      date: '2026年 1月 1日',
+      title: 'ホームページを開設しました',
+      link: '/news/1',
     },
   ]
 
@@ -51,23 +41,23 @@ const News = () => {
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
                 {item.title}
               </h3>
-              <a
-                href={item.link}
+              <Link
+                to={item.link}
                 className="text-orange-600 hover:text-orange-700 font-medium text-sm sm:text-base"
               >
                 詳細を見る →
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         <div className="text-center mt-8 sm:mt-12">
-          <a
-            href="#"
+          <Link
+            to="/news/1"
             className="text-gray-600 hover:text-gray-900 font-medium text-sm sm:text-base"
           >
             お知らせ一覧 →
-          </a>
+          </Link>
         </div>
       </div>
     </section>
