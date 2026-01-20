@@ -31,7 +31,9 @@ const Menu = () => {
           transition={{ duration: 0.8 }}
         >
           <a
-            href="#"
+            href="https://restaurant.ikyu.com/151860"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 sm:py-4 sm:px-12 rounded-full text-lg sm:text-xl transition-all transform hover:scale-105"
           >
             メニューを見る

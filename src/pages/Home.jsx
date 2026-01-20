@@ -7,6 +7,7 @@ import Commitment from '../components/Commitment'
 import Reservation from '../components/Reservation'
 import Menu from '../components/Menu'
 import Space from '../components/Space'
+import Access from '../components/Access'
 import Footer from '../components/Footer'
 
 const Home = () => {
@@ -30,6 +31,7 @@ const Home = () => {
             <Reservation />
             <Menu />
             <Space />
+            <Access />
             <Footer />
         </>
     )

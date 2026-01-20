@@ -43,7 +43,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          市場直送の鮮魚と厳選野菜。<br className="hidden sm:block" />四季折々の美味を、心ゆくまで。<br className="hidden sm:block" />野毛桜木町から徒歩3分。
+          市場直送の鮮魚と厳選野菜。<br className="hidden sm:block" />四季折々の美味を、心ゆくまで。<br className="hidden sm:block" />桜木町駅から徒歩1分。
         </motion.p>
 
         <motion.button

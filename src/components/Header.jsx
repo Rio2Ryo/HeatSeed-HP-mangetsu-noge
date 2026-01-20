@@ -34,6 +34,7 @@ const Header = () => {
     { name: 'ご予約', id: 'reservation' },
     { name: 'メニュー', id: 'menu' },
     { name: '店内の雰囲気', id: 'space' },
+    { name: 'アクセス', id: 'access' },
   ]
 
   return (
@@ -54,7 +55,7 @@ const Header = () => {
           onClick={() => scrollToSection('hero')}
         >
           <span className={isScrolled ? 'text-gray-900' : 'text-white'}>
-            満月 野毛桜木町
+            完全個室 満月 野毛桜木町
           </span>
         </div>
 
