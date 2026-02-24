@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
+const VIDEO_LANDSCAPE = '/media/野毛_横hp (540p).mp4'
+const VIDEO_PORTRAIT = '/media/満月野毛_縦hp (540p).mp4'
+
 const Hero = () => {
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 768
+  )
+  const videoRef = useRef(null)
+
+  // 画面幅に応じてPC/スマホを切り替え
+  useEffect(() => {
+    const mql = window.matchMedia('(min-width: 768px)')
+    const handleChange = (e) => setIsDesktop(e.matches)
+    mql.addEventListener('change', handleChange)
+    return () => mql.removeEventListener('change', handleChange)
+  }, [])
+
+  // 動画ソースが変わったら再読み込み
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load()
+    }
+  }, [isDesktop])
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -12,15 +35,23 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center bg-gray-900 text-white"
+      className="relative h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
     >
-      {/* 背景画像 */}
-      <div className="absolute inset-0 bg-gray-800">
-        <img
-          src="/media/スクリーンショット 2026-01-07 105037.png"
-          alt="Hero Background"
+      {/* 背景動画 */}
+      <div className="absolute inset-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover opacity-60"
-        />
+        >
+          <source
+            src={isDesktop ? VIDEO_LANDSCAPE : VIDEO_PORTRAIT}
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80" />
       </div>
 
