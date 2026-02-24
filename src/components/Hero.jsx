@@ -45,7 +45,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-80"
         >
           <source
             src={isDesktop ? VIDEO_LANDSCAPE : VIDEO_PORTRAIT}
