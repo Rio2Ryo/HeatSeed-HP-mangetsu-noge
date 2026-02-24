@@ -52,7 +52,7 @@ const Hero = () => {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
       </div>
 
       <div className="text-center z-10 px-4 sm:px-6 py-6 sm:py-12 max-w-4xl mx-auto">
