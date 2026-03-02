@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
+      className="relative h-screen flex items-end justify-center bg-gray-900 text-white overflow-hidden"
     >
       {/* 背景動画 */}
       <div className="absolute inset-0">
@@ -52,14 +52,14 @@ const Hero = () => {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
+        {/* フィルターなし */}
       </div>
 
-      <div className="text-center z-10 px-4 sm:px-6 py-6 sm:py-12 max-w-4xl mx-auto">
+      <div className="text-center z-10 px-8 sm:px-6 pb-16 sm:pb-24 max-w-4xl mx-auto">
         <motion.h1
-          className="font-bold mb-6 sm:mb-8 text-white leading-tight"
+          className="font-bold mb-6 sm:mb-8 text-white leading-tight whitespace-nowrap drop-shadow-lg"
           style={{
-            fontSize: 'clamp(2rem, 5vw, 4rem)',
+            fontSize: 'clamp(1.0rem, 4vw, 4rem)',
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
