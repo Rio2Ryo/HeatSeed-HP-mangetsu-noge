@@ -78,35 +78,6 @@ const Footer = () => {
               <span>Official Instagram</span>
             </a>
           </div>
-
-          <div className="space-y-2 sm:space-y-0 sm:space-x-4">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=35.4497277,139.62959899999998"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-orange-400 hover:text-orange-300 text-sm sm:text-base transition-colors"
-            >
-              Google マップで見る
-            </a>
-            <span className="hidden sm:inline text-gray-500">|</span>
-            <a
-              href="https://tabelog.com/kanagawa/A1401/A140102/14095421/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-orange-400 hover:text-orange-300 text-sm sm:text-base transition-colors"
-            >
-              食べログ
-            </a>
-            <span className="hidden sm:inline text-gray-500">|</span>
-            <a
-              href="https://www.hotpepper.jp/strJ003851137/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-orange-400 hover:text-orange-300 text-sm sm:text-base transition-colors"
-            >
-              ホットペッパー
-            </a>
-          </div>
         </div>
 
         {/* コピーライト */}
