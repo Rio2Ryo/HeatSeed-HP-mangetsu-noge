@@ -55,11 +55,11 @@ const Hero = () => {
         {/* フィルターなし */}
       </div>
 
-      <div className="text-center z-10 px-8 sm:px-6 pb-16 sm:pb-24 max-w-4xl mx-auto">
+      <div className="relative text-center z-10 px-6 pb-16 sm:pb-24 w-full mx-auto">
         <motion.h1
-          className="font-bold mb-6 sm:mb-8 text-white leading-tight whitespace-nowrap drop-shadow-lg"
+          className="font-bold mb-6 sm:mb-8 text-white leading-tight sm:whitespace-nowrap drop-shadow-lg"
           style={{
-            fontSize: 'clamp(1.0rem, 4vw, 4rem)',
+            fontSize: 'clamp(1.2rem, 3vw, 3rem)',
           }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
