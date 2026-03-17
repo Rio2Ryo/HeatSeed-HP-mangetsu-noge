@@ -27,7 +27,7 @@ const Reservation = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-lg sm:text-xl text-gray-700">
-            ご予約はお電話・Web・ぐるなび・食べログ・ホットペッパー・一休にて承って<br className="hidden lg:block" />おります。
+            ご予約はお電話・Web・ぐるなび・食べログ・ホットペッパー・一休にて<br className="hidden lg:block" />承っております。
           </p>
         </motion.div>
 
